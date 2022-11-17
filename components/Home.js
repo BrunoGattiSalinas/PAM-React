@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground, } from "react-native";
 
-const image = { uri: "https://i.pinimg.com/originals/66/41/6c/66416cb792cc582f29d239892445fdaa.jpg" };
+const image = { uri: "https://i.pinimg.com/474x/18/f5/3c/18f53cfa9b65c7382c001efedbc43368.jpg" };
 
 export default function Home({navigation}){
     return(

@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ImageBackground, FlatList } from 'react-native';
 import Api from './Api';
+
+const image = { uri: "https://i.pinimg.com/474x/18/f5/3c/18f53cfa9b65c7382c001efedbc43368.jpg" };
 
 
 export default function Campinas() {
@@ -18,17 +20,34 @@ export default function Campinas() {
   } 
   return (
     <View style={styles.container}>
+
+<ImageBackground  style={{
+            position: "absolute",
+            height: '100%',
+            width: '100%'
+          }}source={image}>
+    </ImageBackground>
+
       <View style={styles.header}>
-        <Text style={styles.textoTitulo}>Previsão do tempo - Campinas</Text>
-        <View style={styles.imgs}>
-        <Image
-      style={styles.imgg}
-      source={{
-        uri: 'https://veja.abril.com.br/wp-content/uploads/2016/11/santos.jpg?quality=70&strip=all',
-      }}
-      />
+        <Text style={styles.textoTitulo}>Previsão do Tempo para Campinas</Text>
+                
+    
+     
       </View>
-      </View>
+      <FlatList
+          data={dados}
+          renderItem={({item}) => {
+            return (
+              <View style={styles.tempo}>
+                <Text>Data: {item.date}</Text>
+                <Text>Max: {item.max}</Text>
+                <Text>Min: {item.min}</Text>
+                <Text>Min: {item.description}</Text>
+              </View>
+            );
+          }}
+        
+        />
 
       <View style={styles.blocos}>
         <TouchableOpacity
@@ -47,20 +66,7 @@ export default function Campinas() {
 
       </View>
       
-        <FlatList
-          data={dados}
-          renderItem={({item}) => {
-            return (
-              <View style={styles.tempo}>
-                <Text>Data: {item.date}</Text>
-                <Text>Max: {item.max}</Text>
-                <Text>Min: {item.min}</Text>
-                <Text>Min: {item.description}</Text>
-              </View>
-            );
-          }}
         
-        />
       </View>
     
   );
@@ -75,30 +81,23 @@ const styles = StyleSheet.create({
   },
   tempo:{
     marginLeft: '10%',
-    marginBottom: 10
+    marginBottom: 20,
+    color: '#FFF',
   },
   textoTitulo: {
-    fontSize: 40,
+    bottom: 20,
+    fontSize: 25,
     textAlign: 'center',
-    color: '#1B613D',
+    color: '#FFF',
   },
   header: {
-    margin: 50
-  },
-  imgg:{
-    width: 320,
-    height: 190,
-    margin: 5,
-    borderRadius: 20,
-  },
-  imgs: {
-    alignItems: 'center',
+    margin: 40
   },
   blocos: {
     fontSize: 20,
   },
   texto: {
-    color: '#4281F5',
+    color: '#fff',
     fontSize: 20,
     marginTop: '4%',
     textAlign: 'center'
@@ -108,18 +107,20 @@ const styles = StyleSheet.create({
     width: 265,
     height: 35,
     fontSize: 20,
-    borderColor: '#4281F5'
+    borderColor: '#fff'
   },
   btn: {
-    width: 265,
+    width: 280,
     height: 45,
-    backgroundColor: '#1B613D',
+    backgroundColor: '#0294E8',
     alignItems: 'center',
     margin: 10,
-    borderRadius: 5,
+    borderRadius: 8,
   },
   btnTexto: {
-    fontSize: 30,
-    color: '#FFF'
-  }
+    fontSize: 24,
+    color: '#FFF',
+    top: 6
+
+  },
 });

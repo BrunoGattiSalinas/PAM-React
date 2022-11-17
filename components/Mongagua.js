@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ImageBackground, FlatList } from 'react-native';
 import Api from './Api';
 
-const image = { uri: "https://i.pinimg.com/originals/66/41/6c/66416cb792cc582f29d239892445fdaa.jpg" };
+const image = { uri: "https://i.pinimg.com/474x/18/f5/3c/18f53cfa9b65c7382c001efedbc43368.jpg" };
 
 
 export default function Mongagua() {
@@ -29,7 +29,7 @@ export default function Mongagua() {
     </ImageBackground>
 
       <View style={styles.header}>
-        <Text style={styles.textoTitulo}>Previsão do tempo - Mongaguá</Text>
+        <Text style={styles.textoTitulo}>Previsão do Tempo para Mongaguá</Text>
                 
     
      
@@ -81,13 +81,14 @@ const styles = StyleSheet.create({
   },
   tempo:{
     marginLeft: '10%',
-    marginBottom: 20
+    marginBottom: 20,
+    color: '#FFF',
   },
   textoTitulo: {
     bottom: 20,
     fontSize: 25,
     textAlign: 'center',
-    color: '#421961',
+    color: '#FFF',
   },
   header: {
     margin: 40
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   texto: {
-    color: '#4281F5',
+    color: '#fff',
     fontSize: 20,
     marginTop: '4%',
     textAlign: 'center'
@@ -106,18 +107,20 @@ const styles = StyleSheet.create({
     width: 265,
     height: 35,
     fontSize: 20,
-    borderColor: '#4281F5'
+    borderColor: '#fff'
   },
   btn: {
-    width: 265,
-    height: 35,
-    backgroundColor: '#000',
+    width: 280,
+    height: 45,
+    backgroundColor: '#0294E8',
     alignItems: 'center',
     margin: 10,
-    borderRadius: 3,
+    borderRadius: 8,
   },
   btnTexto: {
     fontSize: 24,
-    color: '#FFF'
-  }
+    color: '#FFF',
+    top: 6
+
+  },
 });
