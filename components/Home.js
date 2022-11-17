@@ -15,7 +15,7 @@ export default function Home({navigation}){
           }}source={image}>
     </ImageBackground>
         
-            <Text style={styles.texto}>PREVISÃO DO TEMPO</Text>
+            <Text style={styles.texto}>PREVISÃO TEMPORAL</Text>
 
             <Text style={styles.texto}>Cidades: </Text>
 
